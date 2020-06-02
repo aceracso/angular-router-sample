@@ -1,0 +1,15 @@
+<h2>CRISES</h2>
+<ul class="crises">
+  <li *ngFor="let crisis of crises$ | async"
+    [class.selected]="crisis.id === selectedId">
+    <a [routerLink]="['/crisis-center', crisis.id]">
+      <span class="badge">{{crisis.id}}</span> {{crisis.name}}
+    </a>
+  </li>
+</ul>
+
+ <!--app-crisis-detail [crisis]="selectedcrisis"></app-crisis-detail-->
+
+<button routerLink="/sidekicks">Go to sidekicks</button>
+
+<router-outlet></router-outlet>
