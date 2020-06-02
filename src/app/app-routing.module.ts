@@ -4,6 +4,7 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { AuthGuard } from './auth/auth.guard';
+import { SelectivePreloadingStrategyService } from './selecting-preloading-strategy.service';
 
 const appRoutes: Routes = [
   {
@@ -34,12 +35,15 @@ const appRoutes: Routes = [
       appRoutes,
       {
         enableTracing: true,
-        preloadingStrategy: PreloadAllModules
+        preloadingStrategy: SelectivePreloadingStrategyService
       } // <-- debugging purposes only
     ),
   ],
   exports: [
     RouterModule
+  ],
+  providers: [
+    SelectivePreloadingStrategyService
   ]
 })
 export class AppRoutingModule { }
