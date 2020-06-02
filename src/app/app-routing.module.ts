@@ -23,7 +23,7 @@ const appRoutes: Routes = [
     outlet: 'popup'
   },
 
-  { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
+  { path: '',   redirectTo: '/superheroes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
